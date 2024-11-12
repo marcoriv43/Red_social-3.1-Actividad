@@ -1,0 +1,25 @@
+<div class="w3-row">
+    <div class="w3-container w3-half w3-margin-top">
+        <div class="w3-container w3-card-4">
+            <h2>Creando Usuario:</h2>
+            <form action="/crearUsuario" method="post">
+                <p>
+                <input class="w3-input" type="text" name="username" style="width:90%" required>
+                <label>Nombre</label></p>
+                <p>
+                <input class="w3-input" type="password" name="password" style="width:90%" minlength="7" required>
+                <label>Contraseña</label></p>   
+                <p>
+                <input class="w3-input" type="password" name="password1" style="width:90%" minlength="7" required>
+                <label>Verifica la Contraseña</label></p>   
+                <p>
+                <input class="w3-input" type="email" name="email" style="width:90%" required>
+                <label>Correo Electronico</label></p>         
+                <p>
+                    <button class="w3-button w3-right w3-green"> Ingresar </button>
+                </p>
+            </form>    
+        </div>
+    </div>
+</div>
+<script src="/assets/js/newUser.js"></script>

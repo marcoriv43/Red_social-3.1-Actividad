@@ -1,0 +1,42 @@
+<h1>Estos son tus post:</h1>
+<div class="w3-row">
+    <div class="w3-container">
+        <div class="w3-twothird w3-center">
+            {{#each data}}
+                {{#ifEquals id_post NULL}}
+                    
+                {{else}}
+                    <ul>
+                        <li>autor:{{username_users}}</li>            
+                        <li>{{title_post}}</li>
+                        <li>{{description_post}}</li>
+                        <li><img src="{{url_post}}" width="100px" height="100px"></li>
+                        {{#ifEquals id_users_post ../ActualUser}}
+                            <div class="w3-container">
+                                <form action="/post/delete/{{id_post}}" method="get">
+                                    <button class="w3-red" type="submit">borrar</button>
+                                </form> 
+                                <form action="/post/edit/{{id_post}}" method="get">
+                                    <button class="w3-blue" type="submit">Actualizar</button>
+                                </form> 
+                            </div>        
+                        {{/ifEquals}}
+                    </ul>
+                {{/ifEquals}}                
+            {{else}}
+                <h1>Crea un post primero</h1>
+            {{/each}}
+        </div>
+        <div class="w3-third">
+            <h3 class="w3-text-green">Agrega un post</h1>
+            <div class="w3-container w3-padding">
+                <form action="/post" method="post">
+                    <input class="w3-input w3-border" type="text" name="title" autofocus>
+                    <input class="w3-input w3-border" type="text" name="description">
+                    <input class="w3-input w3-border" type="text" name="url">
+                    <button class="w3-button" type="submit">enviar</button>
+                </form>
+            </div>
+        </div>        
+    </div>
+</div>

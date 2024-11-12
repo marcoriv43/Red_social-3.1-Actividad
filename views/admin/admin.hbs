@@ -1,0 +1,32 @@
+<h1>hola</h1>
+
+<div class="w3-container">
+  <table class="w3-table-all w3-hoverable">
+    <thead>
+      <tr class="w3-red">
+        <th>ID:</th>
+        <th>Usuarios</th>
+        <th>Correo</th>
+        <th>Estado</th>
+        <th>Moderar</th>
+      </tr>
+    </thead>   
+    {{#each data}} 
+        <tr>
+            <td>{{id_users}}</td>
+            <td>{{username_users}}</td>
+            <td>{{email_users}}</td>
+            <td>{{type_users}}</td>
+            {{#ifEquals type_users "client"}}
+                <form action="/admin/banear/{{id_users}}" method="post">
+                    <td><button class="w3-btn w3-red" type="submit">banear</button></td>
+                </form> 
+            {{else}}                
+                <form action="/admin/desbanear/{{id_users}}" method="post">
+                    <td><button class="w3-btn w3-blue" type="submit">desbanear</button></td>
+                </form> 
+            {{/ifEquals}}       
+        </tr>
+    {{/each}}
+  </table>
+</div>

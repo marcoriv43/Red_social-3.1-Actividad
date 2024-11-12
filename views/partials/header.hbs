@@ -1,0 +1,15 @@
+<div class="w3-container w3-blue">
+    {{#if ActualUser}}
+        <ol>
+            <li><a href="/">Home</a></li>
+            <li><a href="/post">Feed</a></li>
+            <li><a href="/friends">Amistades</a></li>
+            {{#ifEquals typeUser "admin"}}         
+                <li><a href="/admin">Moderar</a></li>
+            {{/ifEquals}}
+        </ol>
+    {{else}}
+        <h1>Bienvenido</h1>
+        <h2><a href="/">Volver</a></h2>
+    {{/if}}
+</div>
