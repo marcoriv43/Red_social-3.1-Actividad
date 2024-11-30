@@ -6,35 +6,42 @@
                 {{#ifEquals id_post NULL}}
                     
                 {{else}}
-                    <ul>
-                        <li>autor:{{username_users}}</li>            
-                        <li>{{title_post}}</li>
+                    <ul class="w3-ul w3-border w3-card-4">
+                        <li class="w3-container w3-blue"><h2>Autor: {{username_users}}</h2></li>            
+                        <li><h3>{{title_post}}</h3></li>
                         <li>{{description_post}}</li>
-                        <li><img src="{{url_post}}" width="100px" height="100px"></li>
+                        <li><img src="{{url_post}}" width="700px" height="400px"></li>
                         {{#ifEquals id_users_post ../ActualUser}}
-                            <div class="w3-container">
+                            <div class="w3-container ">
                                 <form action="/post/delete/{{id_post}}" method="get">
-                                    <button class="w3-red" type="submit">borrar</button>
+                                    <button class="w3-red w3-round-large " type="submit">borrar</button>
                                 </form> 
                                 <form action="/post/edit/{{id_post}}" method="get">
-                                    <button class="w3-blue" type="submit">Actualizar</button>
+                                    <button class="w3-blue w3-round-large" type="submit">Actualizar</button>
                                 </form> 
                             </div>        
                         {{/ifEquals}}
                     </ul>
+                    <br>
                 {{/ifEquals}}                
             {{else}}
                 <h1>Crea un post primero</h1>
             {{/each}}
         </div>
-        <div class="w3-third">
-            <h3 class="w3-text-green">Agrega un post</h1>
+        <div class="w3-third w3-container">
             <div class="w3-container w3-padding">
-                <form action="/post" method="post">
-                    <input class="w3-input w3-border" type="text" name="title" autofocus>
+                <div class="w3-container w3-blue w3-card-4">
+                <h2>Agrega un post</h2>
+                </div>
+                <form action="/post" method="post" class="w3-container w3-light-grey">
+                    <label><b>Titulo del post</b></label>
+                    <input class="w3-input w3-border " type="text" name="title" autofocus>
+                    <label> <b>Descripción</b></label>
                     <input class="w3-input w3-border" type="text" name="description">
+                    <label> <b>Link de la imagen</b></label>
                     <input class="w3-input w3-border" type="text" name="url">
-                    <button class="w3-button" type="submit">enviar</button>
+
+                    <button class="w3-btn w3-green" type="submit">enviar</button>
                 </form>
             </div>
         </div>        

@@ -2,8 +2,8 @@
     <div class="w3-container w3-center w3-padding">
         <h1>Lista de tus amigos aceptados</h1>
         {{#each friendsOK}}
-            <div class="w3-card-4 w3-margin">
-                <ul>
+            <div >
+                <ul class="w3-card-4 w3-margin w3-ul">
                     <li>{{username_users}}</li>
                     <li>{{email_users}}</li>
                 </ul>
@@ -15,8 +15,8 @@
     <div class="w3-container w3-center w3-padding">
         <h1>Lista de tus amigos que deben aceptar</h1>
         {{#each friendsWait}}
-            <div class="w3-card-4 w3-margin">
-                <ul>
+            <div>
+                <ul class="w3-card-4 w3-margin w3-ul">
                     <li>{{username_users}}</li>
                     <li>{{email_users}}</li>
                 </ul>
@@ -30,8 +30,8 @@
     <div class="w3-container w3-padding w3-center">
         <h1>Lista solicitudes por aceptar:</h1>        
         {{#each friendsAccept}}
-            <div class="w3-card-4 w3-margin">
-                <ul>
+            <div>
+                <ul class="w3-card-4 w3-margin w3-ul"> 
                     <li>{{username_users}}</li>
                     <li>{{email_users}}</li>
                     <li>
@@ -53,8 +53,8 @@
     <div class="w3-container w3-padding w3-center">
         <h1>Personas que puedes conocer</h1>        
         {{#each friendsNot}}
-            <div class="w3-card-4 w3-margin">
-                <ul>
+            <div>
+                <ul class="w3-card-4 w3-margin w3-ul">
                     <li>{{username_users}}</li>
                     <li>{{email_users}}</li>
                     <li>
